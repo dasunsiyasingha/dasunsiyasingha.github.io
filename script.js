@@ -4,7 +4,7 @@ function reveal() {
     for (var i = 0; i < reveals.length; i++) {
       var windowHeight = window.innerHeight;
       var elementTop = reveals[i].getBoundingClientRect().top;
-      var elementVisible = 150;
+      var elementVisible = 240;
   
       if (elementTop < windowHeight - elementVisible) {
         reveals[i].classList.add("active");
@@ -23,7 +23,7 @@ function reveal_contain() {
     for (var i = 0; i < reveals.length; i++) {
       var windowHeight = window.innerHeight;
       var elementTop = reveals[i].getBoundingClientRect().top;
-      var elementVisible = 150;
+      var elementVisible = 240;
   
       if (elementTop < windowHeight - elementVisible) {
         reveals[i].classList.add("active1");
@@ -34,3 +34,25 @@ function reveal_contain() {
   }
   
   window.addEventListener("scroll", reveal_contain);
+
+
+
+  function door_animation() {
+    var left_box = document.querySelector(".left-box");
+    var right_box = document.querySelector(".right-box");
+  
+    var windowHeight = window.innerHeight;
+    var elementTop = right_box.getBoundingClientRect().top;
+    var elementVisible = 240;
+  
+    if (elementTop < windowHeight - elementVisible) {
+        right_box.classList.add("open_active");
+        left_box.classList.add("open_active");
+    } else {
+        right_box.classList.remove("open_active");
+        left_box.classList.remove("open_active");
+
+    }
+  }
+  
+  window.addEventListener("scroll", door_animation);

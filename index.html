@@ -110,7 +110,7 @@
         }
 
         .aboutme-div{
-            height: 350px;
+            height: 400px;
             margin: 20px;
             margin-top: 40px;
             display: flex;
@@ -139,7 +139,6 @@
             
         }
 
-        
         .catalog .item2{
             background-image: url("./pic2.jpg");
             background-size: 100% 100% ;
@@ -225,7 +224,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: rgb(32,36,45, 0.4);
+            background-color: rgba(177, 179, 186, 0.4);
         }
 
         .container-2-description{
@@ -296,6 +295,74 @@
             }
         }
 
+
+        .container-3-div{
+            width: 100%;
+            height: 500px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            background-image: url("pic3.jpg");
+            background-size: 100% 100%;
+            overflow: hidden;
+        }
+
+        .left-box{
+            width: 50%;
+            height: 500px;
+            background-color: rgb(46, 13, 124);
+            position: absolute;
+        }
+
+        .right-box{
+            width: 50%;
+            height: 500px;
+            margin-left: 50%;
+            background-color: rgb(135, 13, 13);
+            position: absolute;
+        }
+
+        /* .container-3-div:hover .left-box{
+            animation: door-roll-anim-left-box cubic-bezier(.43,-0.36,0,1.05) 3s;
+            animation-fill-mode: forwards;
+        }
+
+        .container-3-div:hover .right-box{
+            animation: door-roll-anim-right-box cubic-bezier(.43,-0.36,0,1.05) 3s;
+            animation-fill-mode: forwards;
+        } */
+
+        .left-door.open_active{
+            animation: door-roll-anim-left-box cubic-bezier(.43,-0.36,.4,.89) 3s;
+            animation-fill-mode: forwards;
+        }
+
+        .right-door.open_active{
+            animation: door-roll-anim-right-box cubic-bezier(.43,-0.36,.4,.89) 3s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes door-roll-anim-right-box {
+            0%{
+                opacity: 1;
+            }
+
+            100%{
+                transform: translateX(-200%);
+            }
+        }
+
+        @keyframes door-roll-anim-left-box {
+            0%{
+                opacity: 1;
+            }
+
+            100%{
+                transform: translateX(200%);
+            }
+        }
+        
         
 
 
@@ -354,7 +421,7 @@
         </div>
 
         <div class="container-2-div reveal_container">
-            <img src="./man2.png" alt="" width="50%" class="reveal">
+            <img src="./man2.png" alt=""  height="100%" class="reveal">
             <div class="container-2-description reveal reveal-2">
                 <h1 style="padding-left: 30px;">The Largest Business Expert</h1>
                 <p style="padding: 30px;">These cases are perfectly simple and easy to distinguish. In a free hour,
@@ -367,6 +434,11 @@
                 </ul>
                 <button class="button" style="margin-left: 30px; color: black;">About Us</button>
             </div>
+        </div>
+
+        <div class="container-3-div">
+            <div class="left-box left-door"></div>
+            <div class="right-box right-door"></div>
         </div>
         
         <div class="footer">
