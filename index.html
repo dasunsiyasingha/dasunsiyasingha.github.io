@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            /* color: white; */
+            font-size: 18px;
+            box-sizing: border-box;
+            font-family:sans-serif;
+        }
+
+        h1{
+            font-size: 38px;
+            font-weight: 300;
+        }
+
+        .header{
+            height: 80px;
+            width: 100%;
+            display: flex;
+            color: white;   
+            background-color: rgb(32,36,45);
+            justify-content: space-between;
+            padding: 5px;
+            align-items: center;
+            /* margin-bottom: 100px; */
+            position: fixed;
+            z-index: 5;
+        }
+        .container{
+            margin-top: 80px;
+            position: absolute;
+        }
+
+        .contant-div ul{
+            list-style: none;
+            display: flex;
+            margin-right: 20px;
+
+        }
+        .contant-div ul li{
+            margin: 10px;
+            margin-left: 30px;
+        }
+
+        .banner-div{
+            height: 500px;
+            background-color: rgb(32,36,45);
+            display: flex;
+            justify-content:center;
+            align-items: center;
+
+        }
+        
+        .banner-content{
+            display: flex;
+            color: white;  
+            min-height: 100px;
+            margin-left: 30px;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .banner-main{
+            font-size: 28px;
+            font-weight: 800;
+        }
+
+        .banner-description{
+            color: white; 
+            margin-top: 30px;
+            padding: 0px 30px 0px 0px;
+            font-family:sans-serif;
+            font-weight: 400;
+            min-width: 500px;
+            flex-shrink: 0;
+        }
+
+        .footer{
+            background-color: rgb(32,36,45);
+            height: 450px;
+            
+        }
+
+        .button{
+            width: 150px;
+            padding: 10px;
+            margin-top: 30px;
+            font-weight: 500;
+            border-radius: 20px;
+            background-color: transparent;
+            align-self: flex-start;
+            color: white; 
+            border: 1px orange solid;
+            box-sizing:content-box;
+            box-shadow: 0px 0px 15px rgb(255, 166, 0, 0);
+        }
+
+        .button:hover{
+            border: none;
+            color: black;
+            background-color: orange;
+            box-shadow: 0px 0px 15px rgb(255, 166, 0, 0.6);
+
+        }
+
+        .aboutme-div{
+            height: 350px;
+            margin: 20px;
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .catalog{
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-gap: 30px;
+        }
+
+        .catalog .item{
+            width: 300px;
+            height: 250px;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .catalog .item1{
+            background-image: url("./pic1.png");
+            background-size: 100% 100% ;
+            
+        }
+
+        
+        .catalog .item2{
+            background-image: url("./pic2.jpg");
+            background-size: 100% 100% ;
+        }
+        
+        .catalog .item3{
+            background-image: url("./pic3.jpg");
+            background-size: 100% 100% ;
+        }
+        
+        .catalog .item1:hover .img-cover{
+            transform: translateY(-200px);
+            transition: 0.3s linear;
+            opacity: 1;
+        }
+
+        .catalog .item1:hover .img-cover p{
+            margin-bottom: 0px;
+            transition: 0.3s ease-in;
+            transition-delay: 0.5s;
+            opacity: 1;
+        }
+
+        .catalog .item2:hover .img-cover{
+            transform: translateY(-200px);
+            transition: 0.3s linear;
+            opacity: 1;
+        }
+
+        .catalog .item2:hover .img-cover p{
+            margin-bottom: 0px;
+            transition: 0.2s ease-in;
+            transition-delay: 0.5s;
+            opacity: 1;
+        }
+
+        .catalog .item3:hover .img-cover{
+            transform: translateY(-200px);
+            transition: 0.3s linear;
+            opacity: 1;
+        }
+
+        .catalog .item3:hover .img-cover p{
+            margin-bottom: 0px;
+            transition: 0.2s ease-in;
+            transition-delay: 0.5s;
+            opacity: 1;
+        }
+
+        .catalog .item img{
+            width: 100%;
+            height: 100%;
+            object-fit: fill;
+        }
+
+        .img-cover{
+            margin-top: 200px;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(255, 166, 0, 0.8);
+            position: absolute;
+            margin-bottom: 100px;
+            transition: 0.2s linear;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 10px;
+            text-align: center;
+            opacity: 0;
+            position: relative;
+        }
+
+        .img-cover p{
+            opacity: 0;
+            padding: 10px;
+            margin-bottom: 300px;
+            transition: 0.2s ease-in;
+            position: absolute;
+        }
+
+        .container-2-div{
+            height: 600px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(32,36,45, 0.4);
+        }
+
+        .container-2-description{
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: flex-start;
+      
+        }
+
+        .container-2-description ul li{
+
+            margin: 5px;
+            margin-left: 80px;
+            align-self: center;
+        }
+
+
+        .reveal, .reveal_container{
+            position: relative;
+            opacity: 0;
+        }
+
+        
+        .reveal.active{
+            animation: moving-animation 0.4s;
+            animation-delay: 0.5s;
+            animation-fill-mode: forwards;
+        }
+        
+        .reveal-2.active{
+            animation-delay: 0.8s;
+        }
+
+        @keyframes moving-animation{
+            0%{
+                transform: translateY(150px);
+                opacity: 0;
+            }
+
+            100%{
+                transform: translateY(0);
+                opacity: 1; 
+            }
+        }
+
+
+        .reveal_container{
+            position: relative;
+            opacity: 0;
+        }
+        
+        .reveal_container.active1{
+            animation: con-moving-animation 0.4s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes con-moving-animation{
+            0%{
+                transform: translateY(-150px);
+                opacity: 0;
+            }
+
+            100%{
+                transform: translateX(0);
+                opacity: 1; 
+            }
+        }
+
+        
+
+
+    </style>
+
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="header"> 
+        <p style="margin-left: 20px;">portfolio.</p>
+        <div class="contant-div">
+            <ul>
+                <li>Home</li>
+                <li>Contact</li>
+                <li>About</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="banner-div">
+            <img src="./man_pic.png" alt="" height="500px" class="banner-img"/>
+            
+            <div class="banner-content">
+
+                <div class="banner-main">
+                    Hello, It's Me <br><span style="font-size: 38px;">DASUN SIYASINGHA</span> <br>
+                    And I'm a <span style="color: orange; font-size: 28px;">fullstack Developer</span>
+                </div>
+
+                <div class="banner-description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Odit voluptatibus fugit, aliquam atque 
+                     asperiores assumenda nesciunt! Optio, soluta alias similique 
+                     fugiat veritatis autem praesentium commodi neque.
+                </div>
+                <button class="button">Our Services</button>
+            </div>
+        </div>
+
+        <hr style="height: 10px; background-color: orange;">
+
+        <div class="aboutme-div">
+            <h1>About Me</h1>
+            <div class="catalog">
+                <div class="item item1">
+                    <div class="img-cover"><h2 style="margin-bottom: 100px;">Lorem ipsum</h2> <p style="padding-top: 10px;">dolor sit consectetur adipisicing elit. quaerat rerum eaque corporis</p></div>
+                </div>
+                <div class="item item2">
+                    <div class="img-cover"><h2 style="margin-bottom: 100px;">Lorem ipsum</h2> <p style="padding-top: 10px;">dolor sit consectetur adipisicing elit. quaerat rerum eaque corporis</p></div>
+                </div>
+                <div class="item item3">
+                    <div class="img-cover"><h2 style="margin-bottom: 100px;">Lorem ipsum</h2> <p style="padding-top: 10px;">dolor sit consectetur adipisicing elit. quaerat rerum eaque corporis</p></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container-2-div reveal_container">
+            <img src="./man2.png" alt="" width="50%" class="reveal">
+            <div class="container-2-description reveal reveal-2">
+                <h1 style="padding-left: 30px;">The Largest Business Expert</h1>
+                <p style="padding: 30px;">These cases are perfectly simple and easy to distinguish. In a free hour,
+                    when our power of choice is untrammelled and when nothing prevents
+                    our being able to do what we like best.</p>
+                <ul>
+                    <li>Apartments frequently or motionless</li>
+                    <li>Duis aute irure dolor in reprehenderit in voluptate.</li>
+                    <li>Voluptatem quia voluptas sit aspernatur.</li>
+                </ul>
+                <button class="button" style="margin-left: 30px; color: black;">About Us</button>
+            </div>
+        </div>
+        
+        <div class="footer">
+            
+        </div>
+    </div>
+
+</body>
+</html>
