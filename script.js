@@ -40,7 +40,7 @@ function reveal_contain() {
   function door_animation() {
     var left_box = document.querySelector(".left-box");
     var right_box = document.querySelector(".right-box");
-  
+
     var windowHeight = window.innerHeight;
     var elementTop = right_box.getBoundingClientRect().top;
     var elementVisible = 240;

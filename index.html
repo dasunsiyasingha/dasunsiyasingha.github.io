@@ -297,13 +297,14 @@
 
 
         .container-3-div{
+            margin-top: 40px;
             width: 100%;
             height: 500px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: relative;
-            background-image: url("pic3.jpg");
+            background-image: url("./wordpress-image.png");
             background-size: 100% 100%;
             overflow: hidden;
         }
@@ -311,7 +312,8 @@
         .left-box{
             width: 50%;
             height: 500px;
-            background-color: rgb(46, 13, 124);
+            background-color: rgb(41, 41, 41);
+            border: 4px black solid;
             position: absolute;
         }
 
@@ -319,19 +321,10 @@
             width: 50%;
             height: 500px;
             margin-left: 50%;
-            background-color: rgb(135, 13, 13);
+            background-color: rgb(41, 41, 41);
+            border: 4px black solid;
             position: absolute;
         }
-
-        /* .container-3-div:hover .left-box{
-            animation: door-roll-anim-left-box cubic-bezier(.43,-0.36,0,1.05) 3s;
-            animation-fill-mode: forwards;
-        }
-
-        .container-3-div:hover .right-box{
-            animation: door-roll-anim-right-box cubic-bezier(.43,-0.36,0,1.05) 3s;
-            animation-fill-mode: forwards;
-        } */
 
         .left-door.open_active{
             animation: door-roll-anim-left-box cubic-bezier(.43,-0.36,.4,.89) 3s;
@@ -363,8 +356,6 @@
             }
         }
         
-        
-
 
     </style>
 
