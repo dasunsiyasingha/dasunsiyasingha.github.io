@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        .mainDiv{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container{
+            min-width: 600px;
+            min-height: 600px;
+            padding: 20px;
+            background-color: rgb(255, 207, 252);
+            border: 1px black solid;
+            border-radius: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .inputBox{
+            font-size: 20px;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        .input1_container, 
+        .input2_container{
+            padding: 5px;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        input{
+            margin: 20px;
+            margin-left: 0px;
+            font-size: 20px;
+            padding: 5px;
+            border-radius: 10px;
+            box-shadow: 8px 5px 9px  1px rgb(113, 6, 40);
+        }
+
+        .btn{
+            padding: 10px;
+            margin-left: -25px;
+            box-shadow: 8px 5px 9px  0.001px rgb(113, 6, 40);
+            margin-bottom: 20px;
+            background-color: rgb(255, 184, 184);
+            border: none;
+            border-radius: 20px;
+            width: 200px;
+            font-size: 18px;
+            font-weight: 600;
+
+        }
+
+        .btn:hover{
+            padding: 9px;
+            width: 199px;
+            background-color: rgb(255, 126, 126);
+            box-shadow: 8px 5px 9px  1px rgb(97, 5, 34);
+        }
+
+        .view{
+            width: 230px;
+            height: 220px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hart{
+            width: 230px;
+            height: 220px;
+            background-image: url("data:image/jpeg;base64,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");
+            object-fit:fill;
+            position: absolute;
+        }
+
+        .hartCover{
+            width: 230px;
+            height: 220px;
+            margin-top: 0px;
+            background-color: rgb(255, 207, 252);
+            position: absolute;
+        }
+
+        .presentage{
+            padding-top: 40%;
+            font-size: 34px;
+            font-weight: 900;
+            width: 230px;
+            height: 220px;
+            text-align: center;
+            position: absolute;
+        }
+
+        .loveNameDisplay{
+            color: red;
+            font-size: 30px;
+            font-weight: 600;
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="mainDiv">
+        <div class="container">
+
+            <div class="inputBox">
+                <div class="input1_container">
+                    <label for="hisName">Your Name</label>
+                    <input type="text" id="input1" class="input1" onchange="input1Check()">
+                </div>
+
+                <div class="input2_container">
+                    <label for="hisName">Her/His Name</label>
+                    <input type="text" id="input2" class="input2" onchange="input2Check()">
+                </div>
+            </div>
+            <button class="btn" onclick="onChangeCheck()"> Check Love</button>
+            <div class="view">
+                <div class="hart"></div>
+                <div class="hartCover" id="hartCover"></div>
+                <div class="presentage" id="presentage">0%</div>
+            </div>
+            <div class="loveNameDisplay">
+                <span id="name1"></span>
+                <span id="plusMark"></span>
+                <span id="name2"></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var input1;
+        var input2;
+        function input1Check(){
+            input1 = "ok";
+        }
+
+        function input2Check(){
+            input2 = "ok";
+        }
+        function onChangeCheck(){
+            if (input1 == "ok" && input2 == "ok"){
+                hartDis();
+                input1 = "no";
+                input2 = "noo"
+            }
+        }
+
+
+
+        function hartDis(){
+            var hartCover = document.getElementById("hartCover");
+            var presentage = document.getElementById("presentage");
+            
+            var num = getRndInteger(30,101);
+            const id = setInterval(frame, 10);
+            var love = 0;
+
+            function getRndInteger(min, max) {
+                return Math.floor(Math.random() * (max - min)) + min;
+            }
+
+            function frame() {
+                if (love == (num+1)) {
+                    clearInterval(id);
+                } 
+                else{
+                    love++; 
+                    presentage.innerHTML = love + "%";
+                    hartCover.style.marginTop = -((love/100)*220) + 'px';
+                }
+            }
+
+            var name1 = document.getElementById("input1").value;
+            var name2 = document.getElementById("input2").value;
+            
+            var name1Container = document.getElementById("name1");
+            var name2Container = document.getElementById("name2");
+            var plus = document.getElementById("plusMark");
+
+            name1Container.innerHTML=name1;
+            plus.innerHTML=' +';
+            name2Container.innerHTML=name2;
+            
+        }
+    </script>
+</body>
+</html>
